@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Current Awacts</h2>
+  <ion-item *ngFor="let awact of userAwacts">
+    <p>{{ awact.title }}</p>
+    <p>{{ awact.body }}</p>
+    <p>{{ awact.event_time | date: 'MM/dd/yyyy' }}</p>
+    <button ion-button icon-left clear small (click)="markComplete(awact.id)">
+      Mark Complete
+    </button>
+    
+  </ion-item>
+  
+  <h2>Completed Awacts</h2>
+  <ion-item *ngFor="let awact of completedAwacts">
+    <p>{{ awact.title }}</p>
+    <p>{{ awact.body }}</p>
+    <p>{{ awact.event_time | date: 'MM/dd/yyyy' }}</p>
+  </ion-item>
+</ion-content>

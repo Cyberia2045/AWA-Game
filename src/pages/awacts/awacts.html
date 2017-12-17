@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      The AWACTS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+ <ion-item *ngFor="let awact of awacts">
+    <ion-avatar item-start>
+      <img src="">
+    </ion-avatar>
+    <h2>{{ awact.title }}</h2>
+    <p>{{ awact.event_time | date: 'MM/dd/yyyy' }}</p>
+    <p>{{ awact.location }}</p>
+    
+    <ion-card-content>
+      <p>{{ awact.body }}</p>
+    </ion-card-content>
+    
+    <ion-card>
+
+      <ion-row>
+        <ion-col *ngIf="!awact.in_progress">
+          <button ion-button icon-left clear small (click)="markInProgress(awact.id)">
+            <div>Start AWACT</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  </ion-item>
+
+</ion-content>
+
+<button ion-button full style="position: fixed; bottom: 46px;z-index: 1" (click)="addAwact()">New AWACT</button>
