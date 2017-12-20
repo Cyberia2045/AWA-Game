@@ -11,6 +11,10 @@ export class AwactPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+	addPost() {
+	this.navCtrl.push('PostPage'); 
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AwactPage');
   }

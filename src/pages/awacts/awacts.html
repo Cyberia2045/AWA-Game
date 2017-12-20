@@ -10,11 +10,11 @@
 
  <ion-item *ngFor="let awact of awacts">
     <ion-avatar item-start>
-      <img src="">
+      <img src="https://rlv.zcache.com/cool_smiley_face_with_sunglasses_classic_round_sticker-r71e23d9b0d7d4288a57cce19b62358f5_v9waf_8byvr_400.jpg">
     </ion-avatar>
     <h2>{{ awact.title }}</h2>
-    <p>{{ awact.event_time | date: 'MM/dd/yyyy' }}</p>
-    <p>{{ awact.location }}</p>
+    <p>Created: {{ awact.event_time | date: 'MM/dd/yyyy' }}</p>
+    <p>Location: {{ awact.location }}</p>
     
     <ion-card-content>
       <p>{{ awact.body }}</p>
@@ -23,22 +23,16 @@
     <ion-card>
 
       <ion-row>
-        <ion-col *ngIf="!awact.in_progress">
+        <ion-col *ngIf="!awact.in_progress"><!-- This removes the ability to start or remove an AWACT, if said AWACT is in progress. -->
           <button ion-button icon-left clear small (click)="markInProgress(awact.id)">
             <div>Start AWACT</div>
+          </button>          
+          <button ion-button icon-left clear small (click)="deleteAwact(awact.id)">
+            <div>Delete AWACT</div>
           </button>
         </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>4 Comments</div>
-          </button>
-        </ion-col>
-        <ion-col center text-center>
-          <ion-note>
-            11h ago
-          </ion-note>
-        </ion-col>
+
+
       </ion-row>
 
     </ion-card>

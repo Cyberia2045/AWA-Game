@@ -4,6 +4,7 @@ import { AwactsPage } from '../awacts/awacts';
 import { CameraPage } from '../camera/camera';
 import { ProfilePage } from '../profile/profile';
 import { AddPage } from '../add/add';
+import { PostPage } from '../post/post';
 
 @Component({
   templateUrl: 'tabs.html'
