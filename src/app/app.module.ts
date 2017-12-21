@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { AwactPageModule } from '../pages/awact/awact.module';
 import { AwactsPageModule } from '../pages/awacts/awacts.module';
 import { CameraPage } from '../pages/camera/camera';
 import { ProfilePage } from '../pages/profile/profile';
@@ -31,6 +32,7 @@ import { UploadServiceProvider } from '../providers/upload-service/upload-servic
     HttpModule,
     IonicModule.forRoot(MyApp),
     AwactsPageModule,
+    AwactPageModule,
     AddPageModule
   ],
   bootstrap: [IonicApp],

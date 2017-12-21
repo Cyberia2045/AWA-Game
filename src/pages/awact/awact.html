@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      The AWACTS
+      AWACT Posts
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,39 +12,25 @@
     <ion-avatar item-start>
       <img src="">
     </ion-avatar>
-    <h2>Plant a Tree</h2>
+    <h2>{{awact.title}}</h2>
     <p>November 5, 2017</p>
-    <p>Lyon, France</p>
+    <p>{{awact.location}}</p>
   </ion-item>
-
-  <ion-card-content>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  </ion-card-content>
+  
   <ion-card>
+    <ion-item *ngFor="let post of posts">
+      <ion-col>
+        <h2>{{post.title}}</h2>
+      </ion-col>
+      <ion-col>
+        <p>{{post.description}}</p>
+      </ion-col>
+    </ion-item>
+    
+    <p *ngIf="posts.length === 0">
+      No one has completed this AWACT yet!
+    </p>
 
-	  <ion-row>
-	    <ion-col>
-	      <button ion-button icon-left clear small>
-	        <div>Start AWACT</div>
-	      </button>
-	    </ion-col>
-	    <ion-col>
-	      <button ion-button icon-left clear small>
-	        <ion-icon name="text"></ion-icon>
-	        <div>4 Comments</div>
-	      </button>
-	    </ion-col>
-	    <ion-col center text-center>
-	      <ion-note>
-	        11h ago
-	      </ion-note>
-	    </ion-col>
-	  </ion-row>
 
 	</ion-card>
 

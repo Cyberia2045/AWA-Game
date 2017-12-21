@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Http, RequestOptions, RequestMethod, Headers } from '@angular/http';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AwactPage } from '../awact/awact';
 
 @IonicPage()
 @Component({
@@ -34,6 +35,12 @@ export class AwactsPage {
         this.http.post("http://localhost:4567/awacts/start", requestoptions)
           .map(res => res.json())
           .subscribe();
+  }
+  
+  navToAwact(id) {
+    this.navCtrl.push(AwactPage, {
+      id: id
+    });
   }
   
   ionViewDidLoad() {

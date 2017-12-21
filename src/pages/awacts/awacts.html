@@ -23,13 +23,14 @@
     <ion-card>
 
       <ion-row>
-        <ion-col *ngIf="!awact.in_progress"><!-- This removes the ability to start or remove an AWACT, if said AWACT is in progress. -->
+        <ion-col>
           <button ion-button icon-left clear small (click)="markInProgress(awact.id)">
             <div>Start AWACT</div>
           </button>          
           <button ion-button icon-left clear small (click)="deleteAwact(awact.id)">
             <div>Delete AWACT</div>
           </button>
+          <div><button ion-button (click)="navToAwact(awact.id)">View Posts</button></div>
         </ion-col>
 
 
