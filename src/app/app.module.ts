@@ -10,8 +10,9 @@ import { MyApp } from './app.component';
 
 import { AwactPageModule } from '../pages/awact/awact.module';
 import { AwactsPageModule } from '../pages/awacts/awacts.module';
+import { PostPageModule } from '../pages/post/post.module';
 import { CameraPage } from '../pages/camera/camera';
-import { ProfilePage } from '../pages/profile/profile';
+import { ProfilePageModule } from '../pages/profile/profile.module';
 import { AddPageModule } from '../pages/add/add.module';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -23,7 +24,7 @@ import { UploadServiceProvider } from '../providers/upload-service/upload-servic
   declarations: [
     MyApp,
     CameraPage,
-    ProfilePage,
+    // ProfilePage,
     // AddPage,
     TabsPage
   ],
@@ -33,6 +34,8 @@ import { UploadServiceProvider } from '../providers/upload-service/upload-servic
     IonicModule.forRoot(MyApp),
     AwactsPageModule,
     AwactPageModule,
+    ProfilePageModule,
+    PostPageModule,
     AddPageModule
   ],
   bootstrap: [IonicApp],
@@ -40,7 +43,7 @@ import { UploadServiceProvider } from '../providers/upload-service/upload-servic
     MyApp,
     // AwactsPage,
     CameraPage,
-    ProfilePage,
+    // ProfilePage,
     // AddPage,
     TabsPage
   ],

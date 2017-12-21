@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http, RequestOptions, RequestMethod, Headers } from '@angular/http';
-
+import { PostPage} from '../pages/post/post';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 @IonicPage()
@@ -31,6 +31,12 @@ export class ProfilePage {
         this.http.post("http://localhost:4567/awacts/complete", requestoptions)
           .map(res => res.json())
           .subscribe();
+  }
+  
+  addPost(id) {
+    this.navCtrl.push('PostPage', {
+      awact_id: id
+    })
   }
 
   ionViewDidEnter() {

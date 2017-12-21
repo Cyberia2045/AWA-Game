@@ -7,31 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Create Awact</ion-title>
+    <ion-title>Create Post</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
   
-  <form (ngSubmit)="createAwact()">
+  <form (ngSubmit)="createPost()">
     <ion-item>
       <ion-label>Title</ion-label>
-      <ion-input type="text" [(ngModel)]="awact.title" name="title"></ion-input>
+      <ion-input type="text" [(ngModel)]="post.title" name="title"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Description</ion-label>
-      <ion-textarea [(ngModel)]="awact.description" name="description"></ion-textarea>
+      <ion-textarea [(ngModel)]="post.description" name="description"></ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY HH:mm" [(ngModel)]="awact.event_time" name="event_time"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Location</ion-label>
-      <ion-textarea [(ngModel)]="awact.location" name="location"></ion-textarea>
-    </ion-item>
-    <button ion-button type="submit" block>Add Awact</button>
+    <button ion-button type="submit" block>Add Post</button>
   </form>
 
 </ion-content>
