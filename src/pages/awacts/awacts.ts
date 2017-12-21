@@ -27,12 +27,12 @@ export class AwactsPage {
     headers.append('Accept', 'application/json');
     var requestoptions = new RequestOptions({
             method: RequestMethod.Post,
-            url: "http://localhost:4567/awacts/start",
+            url: "https://peaceful-fortress-16828.herokuapp.com/awacts/start",
             headers: headers,
             body: JSON.stringify(data)
         })
     
-        this.http.post("http://localhost:4567/awacts/start", requestoptions)
+        this.http.post("https://peaceful-fortress-16828.herokuapp.com/awacts/start", requestoptions)
           .map(res => res.json())
           .subscribe();
   }
@@ -44,7 +44,7 @@ export class AwactsPage {
   }
   
   ionViewDidLoad() {
-    this.http.get('http://localhost:4567').subscribe(data => {
+    this.http.get('https://peaceful-fortress-16828.herokuapp.com').subscribe(data => {
       this.awacts = data.json().reverse();
     });
   }

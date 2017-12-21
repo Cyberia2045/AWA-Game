@@ -21,7 +21,7 @@ export class AwactPage {
 
   ionViewDidLoad() {
     const id = this.navParams.get('id');
-    this.http.get('http://localhost:4567/awacts/' + id).subscribe(data => {
+    this.http.get('https://peaceful-fortress-16828.herokuapp.com/awacts/' + id).subscribe(data => {
       this.posts = data.json().posts.reverse();
       this.awact = data.json().awact;
     });

@@ -23,12 +23,12 @@ export class ProfilePage {
     headers.append('Accept', 'application/json');
     var requestoptions = new RequestOptions({
             method: RequestMethod.Post,
-            url: "http://localhost:4567/awacts/complete",
+            url: "https://peaceful-fortress-16828.herokuapp.com/awacts/complete",
             headers: headers,
             body: JSON.stringify(data)
         })
     
-        this.http.post("http://localhost:4567/awacts/complete", requestoptions)
+        this.http.post("https://peaceful-fortress-16828.herokuapp.com/awacts/complete", requestoptions)
           .map(res => res.json())
           .subscribe();
   }
@@ -40,7 +40,7 @@ export class ProfilePage {
   }
 
   ionViewDidEnter() {
-    this.http.get('http://localhost:4567/users/1').subscribe(data => {
+    this.http.get('https://peaceful-fortress-16828.herokuapp.com/users/1').subscribe(data => {
       console.log(data)
       this.completedAwacts = data.json().completed_awacts
       this.userAwacts = data.json().in_progress_awacts

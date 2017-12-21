@@ -26,12 +26,12 @@ export class PostPage {
 	headers.append('Accept', 'application/json');
 	var requestoptions = new RequestOptions({
 	        method: RequestMethod.Post,
-	        url: "http://localhost:4567/posts",
+	        url: "https://peaceful-fortress-16828.herokuapp.com/posts",
 	        headers: headers,
 	        body: JSON.stringify(data)
 	    })
 
-	this.http.post("http://localhost:4567/posts", requestoptions)
+	this.http.post("https://peaceful-fortress-16828.herokuapp.com/posts", requestoptions)
 	  .map(res => res.json())
 	  .subscribe();
 	 }
